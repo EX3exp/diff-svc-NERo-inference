@@ -17,7 +17,7 @@ logging.getLogger('numba').setLevel(logging.WARNING)
 project_name = "nero"
 model_path = '/content/drive/MyDrive/diffsvc/NERo_diff-svc/model_ckpt_steps_30000.ckpt'
 config_path = '/content/drive/MyDrive/diffsvc/NERo_diff-svc/config.yaml'
-set_hparams('', '', '', True, True, True, True, config_path)
+set_hparams(config_path)
 hubert_gpu = True
 svc_model = Svc(project_name,config_path,hubert_gpu, model_path)
 print('model loaded')
