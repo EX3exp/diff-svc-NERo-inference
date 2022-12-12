@@ -113,10 +113,7 @@ class Svc:
         self.model_path = model_path
         self.dev = torch.device("cuda")
 
-        self._ = set_hparams(config=config_name, exp_name=self.project_name, infer=True,
-                             reset=True,
-                             hparams_str='',
-                             print_hparams=False)
+        self._ = set_hparams(config_name)
 
         self.mel_bins = hparams['audio_num_mel_bins']
         self.model = GaussianDiffusion(
