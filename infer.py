@@ -11,8 +11,10 @@ from infer_tools import slicer
 from infer_tools.infer_tool import Svc
 from utils.hparams import hparams
 
-chunks_dict = infer_tool.read_temp("./infer_tools/new_chunks_temp.json")
-
+try:
+  chunks_dict = infer_tool.read_temp("./infer_tools/new_chunks_temp.json")
+except:
+  pass
 
 def run_clip(svc_model, key, acc, use_pe, use_crepe, thre, use_gt_mel, add_noise_step, project_name='', f_name=None,
              file_path=None, out_path=None, slice_db=-40,**kwargs):
