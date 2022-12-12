@@ -47,9 +47,10 @@ def read_temp(file_name):
             data_dict = {"info": "temp_dict"}
         return data_dict
 
-
-f0_dict = read_temp("./infer_tools/f0_temp.json")
-
+try:
+  f0_dict = read_temp("./infer_tools/f0_temp.json")
+except:
+  pass
 
 def write_temp(file_name, data):
     with open(file_name, "w") as f:
