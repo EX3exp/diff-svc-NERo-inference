@@ -18,7 +18,7 @@ from network.diff.net import DiffNet
 from network.vocoders.base_vocoder import VOCODERS, get_vocoder_cls
 from preprocessing.data_gen_utils import get_pitch_parselmouth, get_pitch_crepe
 from preprocessing.hubertinfer import Hubertencoder
-from utils.hparams import hparams, set_hparams
+from utils.hparams import set_hparams
 from utils.pitch_utils import denorm_f0, norm_interp_f0
 
 if os.path.exists("chunks_temp.json"):
@@ -112,9 +112,9 @@ class Svc:
 
         self.model_path = model_path
         self.dev = torch.device("cuda")
-
-        self._ = set_hparams(config_name)
-
+        set_hparams(config_name)
+        from utils.hparams import hparams
+        
         self.mel_bins = hparams['audio_num_mel_bins']
         print(self.mel_bins)
         self.model = GaussianDiffusion(
