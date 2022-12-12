@@ -1,4 +1,4 @@
-from utils.hparams import hparams, set_hparams
+from utils.hparams import set_hparams
 from preprocessing.data_gen_utils import get_pitch_parselmouth,get_pitch_crepe
 import numpy as np
 import matplotlib.pyplot as plt
