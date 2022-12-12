@@ -116,6 +116,7 @@ class Svc:
         self._ = set_hparams(config_name)
 
         self.mel_bins = hparams['audio_num_mel_bins']
+        print(self.mel_bins)
         self.model = GaussianDiffusion(
             phone_encoder=Hubertencoder(hparams['hubert_path']),
             out_dims=self.mel_bins, denoise_fn=self.DIFF_DECODERS[hparams['diff_decoder_type']](hparams),
