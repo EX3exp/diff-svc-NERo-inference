@@ -20,7 +20,7 @@ def override_config(old_config: dict, new_config: dict):
             old_config[k] = v
 
 
-def set_hparams(config='', exp_name='', hparams_str='', print_hparams=True, global_hparams=True,reset=True,infer=True, config_filename):
+def set_hparams(config_filename: str, config='', exp_name='', hparams_str='', print_hparams=True, global_hparams=True,reset=True,infer=True):
     '''
         Load hparams from multiple sources:
         1. config chain (i.e. first load base_config, then load config);
