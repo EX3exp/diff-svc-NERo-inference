@@ -10,7 +10,7 @@ from infer import *
 import logging
 from infer_tools.infer_tool import *
 
-set_hparams(config='', exp_name='', hparams_str='', print_hparams=True, global_hparams=True,reset=True,infer=True)
+set_hparams('', '', '', True, True, True, True)
 logging.getLogger('numba').setLevel(logging.WARNING)
 
 # 工程文件夹名，训练时用的那个
