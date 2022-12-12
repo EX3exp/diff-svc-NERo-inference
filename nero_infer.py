@@ -1,4 +1,4 @@
-from utils.hparams import hparams
+from utils.hparams import hparams, set_hparams
 from preprocessing.data_gen_utils import get_pitch_parselmouth,get_pitch_crepe
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,7 +10,7 @@ from infer import *
 import logging
 from infer_tools.infer_tool import *
 
-hparams.set_hparams('', '', '', True, True, True, True)
+set_hparams('', '', '', True, True, True, True)
 logging.getLogger('numba').setLevel(logging.WARNING)
 
 # 工程文件夹名，训练时用的那个
